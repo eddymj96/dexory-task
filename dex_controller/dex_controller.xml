@@ -2,7 +2,18 @@
     <library path="dex_controller">
         <class type="dex_controller::DexController" base_class_type="nav2_core::Controller">
             <description>
-                Follows a path.
+                Dex controller is designed for the turtlebot3 and allows the robot to follow a path using a regulated pursuit controller, with a few extra features:
+                
+                Path Alignment:
+                    Upon receiving a new path, the controller first performs an in-place rotation to align itself with the 
+                    beginning of the path before initiating any forward movement.
+                Goal Orientation:
+                    As the robot approaches the final point of the path, the controller ensures that it matches the desired 
+                    goal orientation by performing an in-place rotation.
+
+                Obstacle Ignorance:
+                    The controller detects if obstacles are in front of it and stops if it is unable to move forward.
+                 
             </description>
         </class>
     </library>

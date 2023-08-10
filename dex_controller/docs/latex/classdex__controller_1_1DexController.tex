@@ -1,0 +1,296 @@
+\hypertarget{classdex__controller_1_1DexController}{}\doxysection{dex\+\_\+controller\+::Dex\+Controller Class Reference}
+\label{classdex__controller_1_1DexController}\index{dex\_controller::DexController@{dex\_controller::DexController}}
+
+
+Dex controller plugin.  
+
+
+
+
+{\ttfamily \#include $<$dex\+\_\+controller.\+hpp$>$}
+
+
+
+Inheritance diagram for dex\+\_\+controller\+::Dex\+Controller\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classdex__controller_1_1DexController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dex\+\_\+controller\+::Dex\+Controller\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdex__controller_1_1DexController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classdex__controller_1_1DexController_a34bdad38a846a4415d31aad902d1ff75}\label{classdex__controller_1_1DexController_a34bdad38a846a4415d31aad902d1ff75}} 
+\mbox{\hyperlink{classdex__controller_1_1DexController_a34bdad38a846a4415d31aad902d1ff75}{Dex\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classdex__controller_1_1DexController}{dex\+\_\+controller\+::\+Dex\+Controller}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdex__controller_1_1DexController_a76b3d67947ee0b08d70ab66333b76301}\label{classdex__controller_1_1DexController_a76b3d67947ee0b08d70ab66333b76301}} 
+\mbox{\hyperlink{classdex__controller_1_1DexController_a76b3d67947ee0b08d70ab66333b76301}{$\sim$\+Dex\+Controller}} () override=default
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classdex__controller_1_1DexController}{dex\+\_\+controller\+::\+Dex\+Controller}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdex__controller_1_1DexController_afda59fe4dd30d451e1c5a3b920878654}{configure}} (const rclcpp\+\_\+lifecycle\+::\+Lifecycle\+Node\+::\+Weak\+Ptr \&parent, std\+::string name, const std\+::shared\+\_\+ptr$<$ tf2\+\_\+ros\+::\+Buffer $>$ tf, const std\+::shared\+\_\+ptr$<$ nav2\+\_\+costmap\+\_\+2d\+::\+Costmap2\+DROS $>$ costmap\+\_\+ros) override
+\begin{DoxyCompactList}\small\item\em Configure controller on bringup. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdex__controller_1_1DexController_a177e19a55b0fb708766ac16548d3ee5f}\label{classdex__controller_1_1DexController_a177e19a55b0fb708766ac16548d3ee5f}} 
+void \mbox{\hyperlink{classdex__controller_1_1DexController_a177e19a55b0fb708766ac16548d3ee5f}{cleanup}} () override
+\begin{DoxyCompactList}\small\item\em Cleanup controller state machine. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdex__controller_1_1DexController_a0909c635a31665c11a44f087d70c85a8}\label{classdex__controller_1_1DexController_a0909c635a31665c11a44f087d70c85a8}} 
+void \mbox{\hyperlink{classdex__controller_1_1DexController_a0909c635a31665c11a44f087d70c85a8}{activate}} () override
+\begin{DoxyCompactList}\small\item\em Activate controller state machine. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdex__controller_1_1DexController_a4fc2fd20328d2c2e1dd3790866adb5e3}\label{classdex__controller_1_1DexController_a4fc2fd20328d2c2e1dd3790866adb5e3}} 
+void \mbox{\hyperlink{classdex__controller_1_1DexController_a4fc2fd20328d2c2e1dd3790866adb5e3}{deactivate}} () override
+\begin{DoxyCompactList}\small\item\em Deactivate controller state machine. \end{DoxyCompactList}\item 
+geometry\+\_\+msgs\+::msg\+::\+Twist\+Stamped \mbox{\hyperlink{classdex__controller_1_1DexController_a4a8963d4797eb77b0a432d0932406c28}{compute\+Velocity\+Commands}} (const geometry\+\_\+msgs\+::msg\+::\+Pose\+Stamped \&pose, const geometry\+\_\+msgs\+::msg\+::\+Twist \&speed, nav2\+\_\+core\+::\+Goal\+Checker $\ast$goal\+\_\+checker) override
+\begin{DoxyCompactList}\small\item\em Compute the best command given the current pose and velocity, with possible debug information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdex__controller_1_1DexController_add55de291cfe6d06af060c9b80e0c3b8}{set\+Plan}} (const nav\+\_\+msgs\+::msg\+::\+Path \&path) override
+\begin{DoxyCompactList}\small\item\em nav2\+\_\+core set\+Plan -\/ Sets the global plan \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdex__controller_1_1DexController_ac05e72b022b630076081a3bc99315544}{set\+Speed\+Limit}} (const double \&speed\+\_\+limit, const bool \&percentage) override
+\begin{DoxyCompactList}\small\item\em Limits the maximum linear speed of the robot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classdex__controller_1_1DexController_a5741199f6fd8e06ab405384128dd46d2}{set\+Global\+Plan\+Orientations}} (nav\+\_\+msgs\+::msg\+::\+Path \&global\+\_\+plan)
+\begin{DoxyCompactList}\small\item\em Compute the best command given the current pose and velocity. \end{DoxyCompactList}\item 
+geometry\+\_\+msgs\+::msg\+::\+Twist \mbox{\hyperlink{classdex__controller_1_1DexController_a893a33ec95e5f265a7f513df9f9c433a}{align\+With\+Trajectory}} (const geometry\+\_\+msgs\+::msg\+::\+Pose\+Stamped \&pose, const geometry\+\_\+msgs\+::msg\+::\+Twist \&speed)
+\begin{DoxyCompactList}\small\item\em Aligns the robot with the trajectory. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classdex__controller_1_1DexController_ab338bd6514fcc4751759464a60e837aa}{calculate\+Time\+Diff}} (const geometry\+\_\+msgs\+::msg\+::\+Pose\+Stamped \&new\+\_\+pose) noexcept
+\begin{DoxyCompactList}\small\item\em Calculates the time difference between the current pose and the new pose. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classdex__controller_1_1DexController_a830791c6dd4319e6cb5bb89dc95c7eeb}{principle\+Component\+Analysis}} (const std\+::vector$<$ Eigen\+::\+Vector3d $>$ \&points)
+\begin{DoxyCompactList}\small\item\em Performs principle component analysis on the given points to estimate the orientation of the initial trajectory section. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{classdex__controller_1_1DexController_ac247c8e6d88b03a6937b5eae2bc02bd3}{to\+Point}} (const geometry\+\_\+msgs\+::msg\+::\+Pose\+Stamped \&pose)
+\begin{DoxyCompactList}\small\item\em Converts a Pose\+Stamped to a Vector3d. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classdex__controller_1_1DexController_ac6bdd8f5e737e1178dc65b2c8e70ec82}\label{classdex__controller_1_1DexController_ac6bdd8f5e737e1178dc65b2c8e70ec82}} 
+rclcpp\+::\+Logger {\bfseries logger\+\_\+} \{rclcpp\+::get\+\_\+logger(\char`\"{}Dex\+Controller\char`\"{})\}
+\item 
+\mbox{\Hypertarget{classdex__controller_1_1DexController_af2f41d78d30fa497d563d13a92f0d67d}\label{classdex__controller_1_1DexController_af2f41d78d30fa497d563d13a92f0d67d}} 
+nav\+\_\+msgs\+::msg\+::\+Path {\bfseries global\+\_\+plan\+\_\+}
+\item 
+\mbox{\Hypertarget{classdex__controller_1_1DexController_a5146d8c634b2aa97d503c92243f375ef}\label{classdex__controller_1_1DexController_a5146d8c634b2aa97d503c92243f375ef}} 
+std\+::shared\+\_\+ptr$<$ tf2\+\_\+ros\+::\+Buffer $>$ {\bfseries tf\+\_\+}
+\item 
+\mbox{\Hypertarget{classdex__controller_1_1DexController_a3328b69c5515149e54624f5363c1904c}\label{classdex__controller_1_1DexController_a3328b69c5515149e54624f5363c1904c}} 
+std\+::shared\+\_\+ptr$<$ nav2\+\_\+costmap\+\_\+2d\+::\+Costmap2\+DROS $>$ {\bfseries costmap\+\_\+ros\+\_\+}
+\item 
+\mbox{\Hypertarget{classdex__controller_1_1DexController_a0205fe140836314f87b1913d42a79a8b}\label{classdex__controller_1_1DexController_a0205fe140836314f87b1913d42a79a8b}} 
+std\+::string {\bfseries name\+\_\+}
+\item 
+\mbox{\Hypertarget{classdex__controller_1_1DexController_a1397c298425e3b4aeb28f1bda6ae03bd}\label{classdex__controller_1_1DexController_a1397c298425e3b4aeb28f1bda6ae03bd}} 
+rclcpp\+\_\+lifecycle\+::\+Lifecycle\+Node\+::\+Weak\+Ptr {\bfseries node\+\_\+}
+\item 
+\mbox{\Hypertarget{classdex__controller_1_1DexController_ae79e1db637a00ab910471600c6c219a0}\label{classdex__controller_1_1DexController_ae79e1db637a00ab910471600c6c219a0}} 
+std\+::string {\bfseries global\+\_\+frame\+\_\+}
+\item 
+\mbox{\Hypertarget{classdex__controller_1_1DexController_a2b51f7e153184bb76c57b13506a709a6}\label{classdex__controller_1_1DexController_a2b51f7e153184bb76c57b13506a709a6}} 
+\mbox{\hyperlink{classdex__controller_1_1SimplePID}{Simple\+PID}}$<$ double $>$ {\bfseries yaw\+\_\+pid\+\_\+}
+\item 
+\mbox{\Hypertarget{classdex__controller_1_1DexController_a96f0fbc3773e8c7701295860ee003ed2}\label{classdex__controller_1_1DexController_a96f0fbc3773e8c7701295860ee003ed2}} 
+double {\bfseries yaw\+\_\+error\+\_\+threshold\+\_\+}
+\item 
+\mbox{\Hypertarget{classdex__controller_1_1DexController_aa5c1c41cdb274dced8ce50442569fffc}\label{classdex__controller_1_1DexController_aa5c1c41cdb274dced8ce50442569fffc}} 
+int {\bfseries pca\+\_\+point\+\_\+no\+\_\+}
+\item 
+\mbox{\Hypertarget{classdex__controller_1_1DexController_a937ac773df57d1a22ad8bac0e71f71e1}\label{classdex__controller_1_1DexController_a937ac773df57d1a22ad8bac0e71f71e1}} 
+double {\bfseries previous\+\_\+time\+\_\+} = 0
+\item 
+\mbox{\Hypertarget{classdex__controller_1_1DexController_a93d61e3a585afd874bc28dd04ed36774}\label{classdex__controller_1_1DexController_a93d61e3a585afd874bc28dd04ed36774}} 
+bool {\bfseries pre\+\_\+plan\+\_\+turning\+\_\+}
+\item 
+\mbox{\Hypertarget{classdex__controller_1_1DexController_ab77a6dc23b9963e624b874d0d706c08d}\label{classdex__controller_1_1DexController_ab77a6dc23b9963e624b874d0d706c08d}} 
+double {\bfseries target\+\_\+yaw\+\_\+}
+\item 
+\mbox{\Hypertarget{classdex__controller_1_1DexController_afd3e312c5775ebe9dec809c1015e42f0}\label{classdex__controller_1_1DexController_afd3e312c5775ebe9dec809c1015e42f0}} 
+std\+::unique\+\_\+ptr$<$ nav2\+\_\+core\+::\+Controller $>$ {\bfseries regulated\+\_\+pp\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Dex controller plugin. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdex__controller_1_1DexController_a893a33ec95e5f265a7f513df9f9c433a}\label{classdex__controller_1_1DexController_a893a33ec95e5f265a7f513df9f9c433a}} 
+\index{dex\_controller::DexController@{dex\_controller::DexController}!alignWithTrajectory@{alignWithTrajectory}}
+\index{alignWithTrajectory@{alignWithTrajectory}!dex\_controller::DexController@{dex\_controller::DexController}}
+\doxysubsubsection{\texorpdfstring{alignWithTrajectory()}{alignWithTrajectory()}}
+{\footnotesize\ttfamily geometry\+\_\+msgs\+::msg\+::\+Twist dex\+\_\+controller\+::\+Dex\+Controller\+::align\+With\+Trajectory (\begin{DoxyParamCaption}\item[{const geometry\+\_\+msgs\+::msg\+::\+Pose\+Stamped \&}]{pose,  }\item[{const geometry\+\_\+msgs\+::msg\+::\+Twist \&}]{speed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Aligns the robot with the trajectory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pose} & Current robot pose \\
+\hline
+{\em speed} & Current robot speed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Best command 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdex__controller_1_1DexController_ab338bd6514fcc4751759464a60e837aa}\label{classdex__controller_1_1DexController_ab338bd6514fcc4751759464a60e837aa}} 
+\index{dex\_controller::DexController@{dex\_controller::DexController}!calculateTimeDiff@{calculateTimeDiff}}
+\index{calculateTimeDiff@{calculateTimeDiff}!dex\_controller::DexController@{dex\_controller::DexController}}
+\doxysubsubsection{\texorpdfstring{calculateTimeDiff()}{calculateTimeDiff()}}
+{\footnotesize\ttfamily double dex\+\_\+controller\+::\+Dex\+Controller\+::calculate\+Time\+Diff (\begin{DoxyParamCaption}\item[{const geometry\+\_\+msgs\+::msg\+::\+Pose\+Stamped \&}]{new\+\_\+pose }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [noexcept]}}
+
+
+
+Calculates the time difference between the current pose and the new pose. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+pose} & The new pose \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The time difference 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdex__controller_1_1DexController_a4a8963d4797eb77b0a432d0932406c28}\label{classdex__controller_1_1DexController_a4a8963d4797eb77b0a432d0932406c28}} 
+\index{dex\_controller::DexController@{dex\_controller::DexController}!computeVelocityCommands@{computeVelocityCommands}}
+\index{computeVelocityCommands@{computeVelocityCommands}!dex\_controller::DexController@{dex\_controller::DexController}}
+\doxysubsubsection{\texorpdfstring{computeVelocityCommands()}{computeVelocityCommands()}}
+{\footnotesize\ttfamily geometry\+\_\+msgs\+::msg\+::\+Twist\+Stamped dex\+\_\+controller\+::\+Dex\+Controller\+::compute\+Velocity\+Commands (\begin{DoxyParamCaption}\item[{const geometry\+\_\+msgs\+::msg\+::\+Pose\+Stamped \&}]{pose,  }\item[{const geometry\+\_\+msgs\+::msg\+::\+Twist \&}]{speed,  }\item[{nav2\+\_\+core\+::\+Goal\+Checker $\ast$}]{goal\+\_\+checker }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Compute the best command given the current pose and velocity, with possible debug information. 
+
+Same as above compute\+Velocity\+Commands, but with debug results. If the results pointer is not null, additional information about the twists evaluated will be in results after the call.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pose} & Current robot pose \\
+\hline
+{\em velocity} & Current robot velocity \\
+\hline
+{\em goal\+\_\+checker} & Ptr to the goal checker for this task in case useful in computing commands \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Best command 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdex__controller_1_1DexController_afda59fe4dd30d451e1c5a3b920878654}\label{classdex__controller_1_1DexController_afda59fe4dd30d451e1c5a3b920878654}} 
+\index{dex\_controller::DexController@{dex\_controller::DexController}!configure@{configure}}
+\index{configure@{configure}!dex\_controller::DexController@{dex\_controller::DexController}}
+\doxysubsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily void dex\+\_\+controller\+::\+Dex\+Controller\+::configure (\begin{DoxyParamCaption}\item[{const rclcpp\+\_\+lifecycle\+::\+Lifecycle\+Node\+::\+Weak\+Ptr \&}]{parent,  }\item[{std\+::string}]{name,  }\item[{const std\+::shared\+\_\+ptr$<$ tf2\+\_\+ros\+::\+Buffer $>$}]{tf,  }\item[{const std\+::shared\+\_\+ptr$<$ nav2\+\_\+costmap\+\_\+2d\+::\+Costmap2\+DROS $>$}]{costmap\+\_\+ros }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Configure controller on bringup. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Weak\+Ptr to node \\
+\hline
+{\em name} & Name of plugin \\
+\hline
+{\em tf} & TF buffer to use \\
+\hline
+{\em costmap\+\_\+ros} & Costmap2\+DROS object of environment \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdex__controller_1_1DexController_a830791c6dd4319e6cb5bb89dc95c7eeb}\label{classdex__controller_1_1DexController_a830791c6dd4319e6cb5bb89dc95c7eeb}} 
+\index{dex\_controller::DexController@{dex\_controller::DexController}!principleComponentAnalysis@{principleComponentAnalysis}}
+\index{principleComponentAnalysis@{principleComponentAnalysis}!dex\_controller::DexController@{dex\_controller::DexController}}
+\doxysubsubsection{\texorpdfstring{principleComponentAnalysis()}{principleComponentAnalysis()}}
+{\footnotesize\ttfamily double dex\+\_\+controller\+::\+Dex\+Controller\+::principle\+Component\+Analysis (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Eigen\+::\+Vector3d $>$ \&}]{points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Performs principle component analysis on the given points to estimate the orientation of the initial trajectory section. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & The points to perform PCA on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The estimated orientation in radians 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdex__controller_1_1DexController_a5741199f6fd8e06ab405384128dd46d2}\label{classdex__controller_1_1DexController_a5741199f6fd8e06ab405384128dd46d2}} 
+\index{dex\_controller::DexController@{dex\_controller::DexController}!setGlobalPlanOrientations@{setGlobalPlanOrientations}}
+\index{setGlobalPlanOrientations@{setGlobalPlanOrientations}!dex\_controller::DexController@{dex\_controller::DexController}}
+\doxysubsubsection{\texorpdfstring{setGlobalPlanOrientations()}{setGlobalPlanOrientations()}}
+{\footnotesize\ttfamily void dex\+\_\+controller\+::\+Dex\+Controller\+::set\+Global\+Plan\+Orientations (\begin{DoxyParamCaption}\item[{nav\+\_\+msgs\+::msg\+::\+Path \&}]{global\+\_\+plan }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Compute the best command given the current pose and velocity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pose} & Current robot pose \\
+\hline
+{\em velocity} & Current robot velocity \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Best command 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdex__controller_1_1DexController_add55de291cfe6d06af060c9b80e0c3b8}\label{classdex__controller_1_1DexController_add55de291cfe6d06af060c9b80e0c3b8}} 
+\index{dex\_controller::DexController@{dex\_controller::DexController}!setPlan@{setPlan}}
+\index{setPlan@{setPlan}!dex\_controller::DexController@{dex\_controller::DexController}}
+\doxysubsubsection{\texorpdfstring{setPlan()}{setPlan()}}
+{\footnotesize\ttfamily void dex\+\_\+controller\+::\+Dex\+Controller\+::set\+Plan (\begin{DoxyParamCaption}\item[{const nav\+\_\+msgs\+::msg\+::\+Path \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+nav2\+\_\+core set\+Plan -\/ Sets the global plan 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The global plan \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdex__controller_1_1DexController_ac05e72b022b630076081a3bc99315544}\label{classdex__controller_1_1DexController_ac05e72b022b630076081a3bc99315544}} 
+\index{dex\_controller::DexController@{dex\_controller::DexController}!setSpeedLimit@{setSpeedLimit}}
+\index{setSpeedLimit@{setSpeedLimit}!dex\_controller::DexController@{dex\_controller::DexController}}
+\doxysubsubsection{\texorpdfstring{setSpeedLimit()}{setSpeedLimit()}}
+{\footnotesize\ttfamily void dex\+\_\+controller\+::\+Dex\+Controller\+::set\+Speed\+Limit (\begin{DoxyParamCaption}\item[{const double \&}]{speed\+\_\+limit,  }\item[{const bool \&}]{percentage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Limits the maximum linear speed of the robot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed\+\_\+limit} & expressed in absolute value (in m/s) or in percentage from maximum robot speed. \\
+\hline
+{\em percentage} & Setting speed limit in percentage if true or in absolute values in false case. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdex__controller_1_1DexController_ac247c8e6d88b03a6937b5eae2bc02bd3}\label{classdex__controller_1_1DexController_ac247c8e6d88b03a6937b5eae2bc02bd3}} 
+\index{dex\_controller::DexController@{dex\_controller::DexController}!toPoint@{toPoint}}
+\index{toPoint@{toPoint}!dex\_controller::DexController@{dex\_controller::DexController}}
+\doxysubsubsection{\texorpdfstring{toPoint()}{toPoint()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3d dex\+\_\+controller\+::\+Dex\+Controller\+::to\+Point (\begin{DoxyParamCaption}\item[{const geometry\+\_\+msgs\+::msg\+::\+Pose\+Stamped \&}]{pose }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Converts a Pose\+Stamped to a Vector3d. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pose} & The pose to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted pose 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/dex\+\_\+controller/dex\+\_\+controller.\+hpp\item 
+src/dex\+\_\+controller.\+cpp\end{DoxyCompactItemize}

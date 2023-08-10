@@ -1,0 +1,152 @@
+\hypertarget{classdex__controller_1_1SimplePID}{}\doxysection{dex\+\_\+controller\+::Simple\+PID$<$ T $>$ Class Template Reference}
+\label{classdex__controller_1_1SimplePID}\index{dex\_controller::SimplePID$<$ T $>$@{dex\_controller::SimplePID$<$ T $>$}}
+
+
+Simple PID controller.  
+
+
+
+
+{\ttfamily \#include $<$simple\+\_\+pid.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdex__controller_1_1SimplePID_a556dd037c19ec878a75c13f00989ea2c}{Simple\+PID}} (const T kp, const T ki, const T kd, const T windup\+\_\+limit, const T setpoint)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classdex__controller_1_1SimplePID}{dex\+\_\+controller\+::\+Simple\+PID}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdex__controller_1_1SimplePID_aefc01fd81acd3af61a5279f54d0446d1}{set\+Gains}} (const T kp, const T ki, const T kd)
+\begin{DoxyCompactList}\small\item\em Set gains for controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdex__controller_1_1SimplePID_a47368c52a917891415afcec46f41dfed}{set\+Setpoint}} (const T setpoint)
+\begin{DoxyCompactList}\small\item\em Set setpoint for controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdex__controller_1_1SimplePID_a9730d82a55ed8be4c3116e6ac809eec8}{set\+Wind\+Up\+Limit}} (const T windup\+\_\+limit)
+\begin{DoxyCompactList}\small\item\em Set windup limit for controller. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classdex__controller_1_1SimplePID_a88b03da13cd8a7d3ef181ac3f495e654}{update}} (const T measured\+\_\+value, const T measured\+\_\+value\+\_\+derivative, const T dt, std\+::optional$<$ rclcpp\+::\+Logger $>$ logger=std\+::nullopt)
+\begin{DoxyCompactList}\small\item\em Update controller with measured value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdex__controller_1_1SimplePID_ace438e0b691d48775fa751efda9097d1}\label{classdex__controller_1_1SimplePID_ace438e0b691d48775fa751efda9097d1}} 
+void \mbox{\hyperlink{classdex__controller_1_1SimplePID_ace438e0b691d48775fa751efda9097d1}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset integral term. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class dex\+\_\+controller\+::\+Simple\+PID$<$ T $>$}
+
+Simple PID controller. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Floating point type \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdex__controller_1_1SimplePID_a556dd037c19ec878a75c13f00989ea2c}\label{classdex__controller_1_1SimplePID_a556dd037c19ec878a75c13f00989ea2c}} 
+\index{dex\_controller::SimplePID$<$ T $>$@{dex\_controller::SimplePID$<$ T $>$}!SimplePID@{SimplePID}}
+\index{SimplePID@{SimplePID}!dex\_controller::SimplePID$<$ T $>$@{dex\_controller::SimplePID$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SimplePID()}{SimplePID()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classdex__controller_1_1SimplePID}{dex\+\_\+controller\+::\+Simple\+PID}}$<$ T $>$\+::\mbox{\hyperlink{classdex__controller_1_1SimplePID}{Simple\+PID}} (\begin{DoxyParamCaption}\item[{const T}]{kp,  }\item[{const T}]{ki,  }\item[{const T}]{kd,  }\item[{const T}]{windup\+\_\+limit,  }\item[{const T}]{setpoint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for \mbox{\hyperlink{classdex__controller_1_1SimplePID}{dex\+\_\+controller\+::\+Simple\+PID}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kp} & Proportional gain \\
+\hline
+{\em ki} & Integral gain \\
+\hline
+{\em kd} & Derivative gain \\
+\hline
+{\em windup\+\_\+limit} & Windup limit for integral term \\
+\hline
+{\em setpoint} & Setpoint for controller \\
+\hline
+{\em logger} & Optional logger for debugging \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdex__controller_1_1SimplePID_aefc01fd81acd3af61a5279f54d0446d1}\label{classdex__controller_1_1SimplePID_aefc01fd81acd3af61a5279f54d0446d1}} 
+\index{dex\_controller::SimplePID$<$ T $>$@{dex\_controller::SimplePID$<$ T $>$}!setGains@{setGains}}
+\index{setGains@{setGains}!dex\_controller::SimplePID$<$ T $>$@{dex\_controller::SimplePID$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setGains()}{setGains()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classdex__controller_1_1SimplePID}{dex\+\_\+controller\+::\+Simple\+PID}}$<$ T $>$\+::set\+Gains (\begin{DoxyParamCaption}\item[{const T}]{kp,  }\item[{const T}]{ki,  }\item[{const T}]{kd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set gains for controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kp} & Proportional gain \\
+\hline
+{\em ki} & Integral gain \\
+\hline
+{\em kd} & Derivative gain \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdex__controller_1_1SimplePID_a47368c52a917891415afcec46f41dfed}\label{classdex__controller_1_1SimplePID_a47368c52a917891415afcec46f41dfed}} 
+\index{dex\_controller::SimplePID$<$ T $>$@{dex\_controller::SimplePID$<$ T $>$}!setSetpoint@{setSetpoint}}
+\index{setSetpoint@{setSetpoint}!dex\_controller::SimplePID$<$ T $>$@{dex\_controller::SimplePID$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setSetpoint()}{setSetpoint()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classdex__controller_1_1SimplePID}{dex\+\_\+controller\+::\+Simple\+PID}}$<$ T $>$\+::set\+Setpoint (\begin{DoxyParamCaption}\item[{const T}]{setpoint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set setpoint for controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em setpoint} & Setpoint for controller \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdex__controller_1_1SimplePID_a9730d82a55ed8be4c3116e6ac809eec8}\label{classdex__controller_1_1SimplePID_a9730d82a55ed8be4c3116e6ac809eec8}} 
+\index{dex\_controller::SimplePID$<$ T $>$@{dex\_controller::SimplePID$<$ T $>$}!setWindUpLimit@{setWindUpLimit}}
+\index{setWindUpLimit@{setWindUpLimit}!dex\_controller::SimplePID$<$ T $>$@{dex\_controller::SimplePID$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setWindUpLimit()}{setWindUpLimit()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classdex__controller_1_1SimplePID}{dex\+\_\+controller\+::\+Simple\+PID}}$<$ T $>$\+::set\+Wind\+Up\+Limit (\begin{DoxyParamCaption}\item[{const T}]{windup\+\_\+limit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set windup limit for controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em windup\+\_\+limit} & Windup limit for integral term \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdex__controller_1_1SimplePID_a88b03da13cd8a7d3ef181ac3f495e654}\label{classdex__controller_1_1SimplePID_a88b03da13cd8a7d3ef181ac3f495e654}} 
+\index{dex\_controller::SimplePID$<$ T $>$@{dex\_controller::SimplePID$<$ T $>$}!update@{update}}
+\index{update@{update}!dex\_controller::SimplePID$<$ T $>$@{dex\_controller::SimplePID$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classdex__controller_1_1SimplePID}{dex\+\_\+controller\+::\+Simple\+PID}}$<$ T $>$\+::update (\begin{DoxyParamCaption}\item[{const T}]{measured\+\_\+value,  }\item[{const T}]{measured\+\_\+value\+\_\+derivative,  }\item[{const T}]{dt,  }\item[{std\+::optional$<$ rclcpp\+::\+Logger $>$}]{logger = {\ttfamily std\+:\+:nullopt} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Update controller with measured value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em measured\+\_\+value} & Measured value \\
+\hline
+{\em dt} & Time step \\
+\hline
+{\em logger} & Optional logger for debugging \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Output of controller 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/dex\+\_\+controller/simple\+\_\+pid.\+hpp\end{DoxyCompactItemize}

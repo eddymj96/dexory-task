@@ -13,6 +13,12 @@
 #include "pluginlib/class_loader.hpp"
 #include "rclcpp/rclcpp.hpp"
 
+#include <dex_controller/simple_pid.hpp>
+#include <nav2_regulated_pure_pursuit_controller/regulated_pure_pursuit_controller.hpp>
+#include <vector>
+#include <Eigen/Dense>
+
+
 namespace dex_controller
 {
 
@@ -26,7 +32,7 @@ public:
   /**
    * @brief Constructor for dex_controller::DexController
    */
-  DexController() = default;
+  DexController();
 
   /**
    * @brief Destructor for dex_controller::DexController
@@ -74,8 +80,8 @@ public:
    * @return          Best command
    */
   geometry_msgs::msg::TwistStamped computeVelocityCommands(
-    const geometry_msgs::msg::PoseStamped & pose, const geometry_msgs::msg::Twist & velocity,
-    nav2_core::GoalChecker * /*goal_checker*/) override;
+    const geometry_msgs::msg::PoseStamped & pose, const geometry_msgs::msg::Twist & speed,
+    nav2_core::GoalChecker * goal_checker) override;
 
   /**
    * @brief nav2_core setPlan - Sets the global plan
@@ -92,10 +98,66 @@ public:
    */
   void setSpeedLimit(const double & speed_limit, const bool & percentage) override;
 
+
 protected:
+  /**
+   * @brief Compute the best command given the current pose and velocity
+   *
+   * @param pose      Current robot pose
+   * @param velocity  Current robot velocity
+   * @return          Best command
+   */
+  void setGlobalPlanOrientations(nav_msgs::msg::Path& global_plan);
+  
+  /**
+    * @brief Aligns the robot with the trajectory
+    * @param pose Current robot pose
+    * @param speed Current robot speed
+    * @return Best command
+  */
+  geometry_msgs::msg::Twist alignWithTrajectory(const geometry_msgs::msg::PoseStamped& pose, const geometry_msgs::msg::Twist& speed);
+
+  /**
+   * @brief Calculates the time difference between the current pose and the new pose
+   * @param new_pose The new pose
+   * @return The time difference
+  */
+  double calculateTimeDiff(const geometry_msgs::msg::PoseStamped& new_pose) noexcept;
+
+  /**
+   * @brief Performs principle component analysis on the given points to estimate the orientation of the initial trajectory section
+   * @param points The points to perform PCA on
+   * @return The estimated orientation in radians
+  */
+  double principleComponentAnalysis(const std::vector<Eigen::Vector3d>& points);
+
+  /**
+   * @brief Converts a PoseStamped to a Vector3d
+   * @param pose The pose to convert
+   * @return The converted pose
+  */
+  Eigen::Vector3d toPoint(const geometry_msgs::msg::PoseStamped& pose);
+
   rclcpp::Logger logger_{rclcpp::get_logger("DexController")};
   nav_msgs::msg::Path global_plan_;
+
+  std::shared_ptr<tf2_ros::Buffer> tf_;
+  std::shared_ptr<nav2_costmap_2d::Costmap2DROS> costmap_ros_;
+  std::string name_;
+  rclcpp_lifecycle::LifecycleNode::WeakPtr node_;
+  std::string global_frame_;
+
+
+  SimplePID<double> yaw_pid_;
+  double yaw_error_threshold_;
+  int pca_point_no_; // Number of points to use for PCA
+  double previous_time_ = 0;
+  bool pre_plan_turning_;
+  double target_yaw_;
+
+  std::unique_ptr<nav2_core::Controller> regulated_pp_;
 };
+
 
 }  // namespace dex_controller
 
