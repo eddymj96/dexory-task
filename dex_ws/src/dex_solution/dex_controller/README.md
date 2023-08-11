@@ -16,16 +16,11 @@ The pure pursuit controller comes an option to parse the costmap and deal with o
 Similar as above the `nav2` stack comes with a goal and progress checker plugin, these were added via the controller parameters.
 
 
-## Components
-
-The Dex Controller the Nav2 reguated 
-
 ## Build Instructions
 
 ### Building the package
 
 Ensure you have built the latest docker image in `ade` directory:
-
 
 Go to the workspace directory `dex_ws`, to build:
 
