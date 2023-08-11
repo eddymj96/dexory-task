@@ -5,9 +5,9 @@
 
 **Rotate in-place start**: Naturally, implementing the shim-controller here would seem quite obvious; however, due to some linker issues and a small desire to write some more custom code myself, I have implemented a simple PID controller that orientates itself to the trajectory before passing behaviour off to the regulated pure pursuit controller. The desired orientation could simply be the heading of the vector from the first waypoint to the next. In an effort to make something *slightly* more interesting, the controller can be set to take `N` (where `N` <=`path.size()`) number of points from the start of the trajectory. Some pricniple component analysis is then done to estimate an `average` vector from these points and thus a direction from which to begin. 
 
-***Rotate in-place end**: The regulated pure pursuit controller, which this controller wraps around, can be set to rotate at the end of its trajectory simply by setting the option in the `.yaml` file.
+**Rotate in-place end**: The regulated pure pursuit controller, which this controller wraps around, can be set to rotate at the end of its trajectory simply by setting the option in the `.yaml` file.
 
-***Planner improvement**: The planned path always delivered poses with defualt constructed orientations (all yaws were set to 0) so a very simple planner improvement was made by simply setting the orientation goals of every pose to the be the heading to the subsequent waypoint. It is unclear whether this had much impact on the performance of the pure pursuit controller (I would have to spend more time to see what it does with the planner points under the hood).
+**Planner improvement**: The planned path always delivered poses with defualt constructed orientations (all yaws were set to 0) so a very simple planner improvement was made by simply setting the orientation goals of every pose to the be the heading to the subsequent waypoint. It is unclear whether this had much impact on the performance of the pure pursuit controller (I would have to spend more time to see what it does with the planner points under the hood).
 
 **Obstacle Detection**
 The pure pursuit controller comes an option to parse the costmap and deal with obstacles already. So this was simply set as a flag in the controller parameters.
@@ -24,12 +24,23 @@ The Dex Controller the Nav2 reguated
 
 ### Building the package
 
+Ensure you have built the latest docker image in `ade` directory:
+
+
 Go to the workspace directory `dex_ws`, to build:
 
 ```console
 colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
-Ensure you source the package:
+
+One may need to create a default conan profile:
+
+```console
+conan profile new default --detect
+conan profile update settings.compiler.libcxx=libstdc++11 default
+```
+
+After it has been built, Eensure you source the package:
 ```
 source install/setup.bash
 ```
@@ -38,9 +49,6 @@ source install/setup.bash
 ### Conan
 
 The conan has been used to for importing Eigen, conan can be called directly from within a CMakeLists.txt for seamless integration. Thus, as a user all you need is to install it (*Note:* Ensure that it is version 1.59.0 as Conan 2 has been released but still lacks support for many packages)
-
-
-create default conan profile
 
 
 ### Docker
